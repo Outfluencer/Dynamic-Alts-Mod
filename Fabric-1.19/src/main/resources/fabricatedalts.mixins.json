@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "de.enzaxd.dynamic_alts_fabric_1_19.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "client": [
+    "TitleScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

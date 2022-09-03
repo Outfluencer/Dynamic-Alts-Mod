@@ -23,3 +23,7 @@ classes/
 bin/
 .classpath
 .project
+
+# Fabric 1.19
+
+Fabric-1.19/run/
