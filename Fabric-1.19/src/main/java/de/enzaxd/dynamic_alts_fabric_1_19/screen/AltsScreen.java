@@ -22,7 +22,7 @@ public class AltsScreen extends Screen {
 
     private final static int ENTRY_WIDTH = 250;
     private final List<GridElement> CALC_TRACKER = new ArrayList<>();
-    private final Scrollbar scrollbar = new Scrollbar(20);
+    private final Scrollbar scrollbar = new Scrollbar(40);
     private ButtonWidget nextReload;
     private TextFieldWidget searchField;
 
@@ -64,7 +64,6 @@ public class AltsScreen extends Screen {
         }));
 
         int accountMax = this.width / ENTRY_WIDTH;
-        if (accountMax > 3) accountMax = 3;
 
         final List<Account> allAccounts = new CopyOnWriteArrayList<>(new ArrayList<>(this.accounts()));
         final List<Account> nextStack = new ArrayList<>();
@@ -143,7 +142,6 @@ public class AltsScreen extends Screen {
         this.scrollbar.renderScrollbar();
 
         int accountMax = this.width / ENTRY_WIDTH;
-        if (accountMax > 3) accountMax = 3;
 
         int i = 0;
         for (GridElement gridElement : CALC_TRACKER) {
@@ -162,7 +160,7 @@ public class AltsScreen extends Screen {
                 RenderWrapper.translate(x, (float) (i + this.scrollbar.getScrollY()), 0);
 
                 RenderWrapper.rectangle(0, 0, ENTRY_WIDTH - 1, (int) (this.scrollbar.entryHeight - 1), Integer.MIN_VALUE);
-                RenderWrapper.textCentered(element.getName(), ENTRY_WIDTH / 2, (int) (this.scrollbar.entryHeight / 4), element.getLastLogin() != 0L ? Color.ORANGE.getRGB() : -1);
+                RenderWrapper.textCentered(element.getName(), ENTRY_WIDTH / 2, 15, element.getLastLogin() != 0L ? Color.ORANGE.getRGB() : -1);
 
                 RenderWrapper.pop();
                 x += ENTRY_WIDTH;
