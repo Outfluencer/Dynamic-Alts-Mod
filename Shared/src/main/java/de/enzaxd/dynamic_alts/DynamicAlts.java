@@ -63,6 +63,8 @@ public class DynamicAlts {
     }
 
     public void loadAccounts() throws IOException {
+        if (KeyConfig.authKey == null) return;
+
         final CloseableHttpClient client = HttpClientBuilder.create().build();
 
         final HttpPost post = new HttpPost("http://api.dynamic-alts.com/api/v1/accounts");
